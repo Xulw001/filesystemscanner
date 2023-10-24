@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://jihulab.com/xulw/filesystemscanner.git
+git remote add origin https://jihulab.com/study12/filesystemscanner.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://jihulab.com/xulw/filesystemscanner/-/settings/integrations)
+- [ ] [Set up project integrations](https://jihulab.com/study12/filesystemscanner/-/settings/integrations)
 
 ## Collaborate with your team
 
