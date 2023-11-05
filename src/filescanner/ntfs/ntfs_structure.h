@@ -77,7 +77,7 @@ typedef struct {
   b32 attr_type;  // Attribute Type
   b32 length;
   b8 non_resident;  // 0 - resident, 1 - non resident
-  b8 name_length;   // 0 - no name, 0x18 - named
+  b8 name_length;   // 0 - no name
   ub16 name_offset;
   ub16 flags;    // Flags
   ub16 attr_id;  // Attribute Id
