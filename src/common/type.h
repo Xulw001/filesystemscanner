@@ -15,5 +15,12 @@ typedef unsigned long ulong;
 #ifdef _WIN32
 typedef wchar_t word;
 #endif
+
+enum FilePointer {
+  SK_SET,
+  SK_CUR,
+  SK_END,
+};
+
 }  // namespace common
 #endif

@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #ifndef NTFS_STRUCTRE_H_
 #define NTFS_STRUCTRE_H_
 #include "ntfs_common.h"
@@ -266,4 +267,5 @@ typedef struct {
 #pragma pack()
 }  // namespace ntfs
 }  // namespace filescanner
+#endif
 #endif

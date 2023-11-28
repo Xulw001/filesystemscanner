@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #include "ntfs_attribute.h"
 namespace filescanner {
 namespace ntfs {
@@ -314,3 +315,4 @@ bool CIndexAllocAttr::PatchUS(b16 *sector_pointer, b32 sector_num, b16 usn,
 }
 }  // namespace ntfs
 }  // namespace filescanner
+#endif

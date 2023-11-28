@@ -123,6 +123,9 @@ void CNtfsScanner::IndexEntryCallback(const CIndexEntry& ie,
       if (p_data_handler_->FileContentNeed()) {
         FileInfo fbi = {wstrFile, file_size};
         file_map_[ie.GetMFTReference()] = fbi;
+      } else {
+        p_disk_scanner_->UpdateScannedSpace((file_size + 4095) / 4096 * 4096);
+        p_disk_scanner_->UpdateScannedProcess(1);
       }
 
       if (p_folder_selector_) {

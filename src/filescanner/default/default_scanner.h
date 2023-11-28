@@ -29,28 +29,28 @@ typedef NTSTATUS(WINAPI *PNTQUERYDIRECTORYFILE)(
 #endif
 
 namespace filescanner {
-namespace default {
+namespace other {
 
-  class CDefaultScanner : public IVolumeScannerInterface {
-   public:
-    CDefaultScanner(const os_string &path, CDiskScanner *p_disk_scanner,
-                    IDataHanderInterface *p_data_handler,
-                    CFolderSelector *p_folder_selector);
-    bool Scan();
+class CDefaultScanner : public IVolumeScannerInterface {
+ public:
+  CDefaultScanner(const os_string &path, CDiskScanner *p_disk_scanner,
+                  IDataHanderInterface *p_data_handler,
+                  CFolderSelector *p_folder_selector);
+  bool Scan();
 
-   private:
-    bool TraverseDir(const os_string &path);
+ private:
+  bool TraverseDir(const os_string &path);
 #ifndef __linux__
-    bool FasterTraverseDir(const os_string &path);
-    PNTQUERYDIRECTORYFILE pNtQueryDirectoryFile_;
+  bool FasterTraverseDir(const os_string &path);
+  PNTQUERYDIRECTORYFILE pNtQueryDirectoryFile_;
 #endif
 
-   private:
-    os_string volume_name_;
-    CDiskScanner *p_disk_scanner_;
-    CFolderSelector *p_folder_selector_;
-    IDataHanderInterface *p_data_handler_;
-  };
-}  // namespace default
+ private:
+  os_string volume_name_;
+  CDiskScanner *p_disk_scanner_;
+  CFolderSelector *p_folder_selector_;
+  IDataHanderInterface *p_data_handler_;
+};
+}  // namespace other
 }  // namespace filescanner
 #endif

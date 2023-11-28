@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #ifndef NTFS_COMMON_H_
 #define NTFS_COMMON_H_
 #include "common/type.h"
@@ -55,4 +56,5 @@ typedef enum {
 
 }  // namespace ntfs
 }  // namespace filescanner
+#endif
 #endif

@@ -74,7 +74,7 @@ class ScopedPtr {
  private:
   void Clean() {
     if (ptr_) {
-      delete[] ptr_;
+      delete ptr_;
       ptr_ = NULL;
     }
   }

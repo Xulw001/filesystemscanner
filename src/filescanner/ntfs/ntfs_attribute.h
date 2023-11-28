@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #ifndef NTFS_ATTR_H_
 #define NTFS_ATTR_H_
 
@@ -6,12 +7,6 @@
 #include "ntfs_record.h"
 namespace filescanner {
 namespace ntfs {
-
-enum FilePointer {
-  SK_SET,
-  SK_CUR,
-  SK_END,
-};
 
 class CBaseAttr {
  public:
@@ -389,4 +384,5 @@ class CIndexBlock : public CIndexList {
 
 };  // namespace ntfs
 };  // namespace filescanner
+#endif
 #endif

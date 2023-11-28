@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #include "ntfs_record.h"
 
 #include <assert.h>
@@ -256,3 +257,4 @@ CBaseAttr *CFileRecord::FindData() const {
 
 }  // namespace ntfs
 }  // namespace filescanner
+#endif

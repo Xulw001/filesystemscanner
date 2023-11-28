@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #ifndef NTFS_FILE_RECORD_H_
 #define NTFS_FILE_RECORD_H_
 #include <list>
@@ -121,4 +122,5 @@ class CFileRecord {
 };
 }  // namespace ntfs
 }  // namespace filescanner
+#endif
 #endif

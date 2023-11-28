@@ -1,6 +1,7 @@
 #include "scanner_factory.h"
 
 #include "default/default_scanner.h"
+#include "ext/ext_scanner.h"
 #include "ntfs/ntfs_scanner.h"
 
 namespace filescanner {
@@ -21,13 +22,19 @@ IVolumeScannerInterface *ScannerFactory::CreateScanner(
   fs_type filetype = (fs_type)p_disk_scanner->GetFileSystemType(path);
   switch (filetype) {
     case NTFS:
+#ifdef _WIN32
       return new ntfs::CNtfsScanner(path, p_disk_scanner, p_data_handler,
                                     p_folder_selector);
+#endif
     case EXT4:
+#ifdef __linux
+      return new ext::CExt4Scanner(path, p_disk_scanner, p_data_handler,
+                                   p_folder_selector);
+#endif
     case XFS:
     case OTHER:
-      return new default ::CDefaultScanner(path, p_disk_scanner, p_data_handler,
-                                           p_folder_selector);
+      return new other::CDefaultScanner(path, p_disk_scanner, p_data_handler,
+                                        p_folder_selector);
   }
   return NULL;
 }

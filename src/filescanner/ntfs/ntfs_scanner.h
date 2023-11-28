@@ -52,8 +52,6 @@ class CNtfsScanner : public IVolumeScannerInterface {
 
   common::map<b64, os_string> folder_map_;
   common::map<b64, FileInfo> file_map_;
-  //   list<wstring> m_lstRawFiles;
-  //   map<ULONGLONG, FileBaseInfo> m_mapNotResidentFiles;
 };
 }  // namespace ntfs
 }  // namespace filescanner
